@@ -1,24 +1,15 @@
 import graphene
 import graphql_jwt
-import links.schema
-import users.schema
-import links.schema_relay
 import cities.schema
 import shortener.schema
 
-class Query(users.schema.Query, 
-            links.schema.Query, 
-            links.schema_relay.RelayQuery, 
-            cities.schema.Query, 
+class Query(cities.schema.Query, 
             shortener.schema.Query, 
             graphene.ObjectType, 
 ):
     pass 
 
-class Mutation(users.schema.Mutation, 
-            links.schema.Mutation, 
-            links.schema_relay.RelayMutation, 
-            cities.schema.Mutation, 
+class Mutation(cities.schema.Mutation, 
             shortener.schema.Mutation, 
             graphene.ObjectType, 
 ): 
